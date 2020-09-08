@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment number application made with 💙 in Vue.js</title>
+    <link rel="stylesheet" href="bulma.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Increment number
+                </h1>
+                <h2 class="subtitle">
+                    Made with love in <a href="https://vuejs.org">Vue.js</a>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bottom">
+        <div class="content has-text-centered">
+            <p>
+                <strong>{{ title }}</strong> by <a :href ="author_link">{{ author }}</a>. The source code is licensed
+                <a :href="code_license_link">MIT</a>.
+            </p>
+        </div>
+    </footer>
+    </div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Increment number',
+            author: 'Gabriel Akinyosoye',
+            author_link: 'https://github.com/GabrielFemi',
+            code_license: 'MIT',
+            code_license_link: 'http://opensource.org/licenses/mit-license.php'
+        },
+        methods: {
+
+        }
+    })
+</script>
+</body>
+</html>
