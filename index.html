@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Increment number application made with 💙 in Vue.js</title>
-    <link rel="stylesheet" href="bulma.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="vue.js"></script>
 </head>
 <body>
-    <div id="app">
 
-        <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Increment number
-                </h1>
-                <h2 class="subtitle">
-                    Made with love in <a href="https://vuejs.org">Vue.js</a>
-                </h2>
+    <div id="app">
+        <div class="center text-50px text-center text-bangers">
+            {{  count  }}
+            <br>
+            <button v-on:click="increaseCounter()" class="btn btn-lg btn-success">Increase</button>
+        </div>
+
+
+    <section>
+
+        <div class="container">
+            <div class="mx-auto bg-bulma">
+                <h4 class="text-center text-bangers text-white text-50px">Number increment</h4>
             </div>
         </div>
+
     </section>
 
-    <footer class="footer bottom">
-        <div class="content has-text-centered">
+    <footer class="footer bottom text-center">
+        <div>
             <p>
                 <strong>{{ title }}</strong> by <a :href ="author_link">{{ author }}</a>. The source code is licensed
                 <a :href="code_license_link">MIT</a>.
@@ -42,10 +46,18 @@
             author: 'Gabriel Akinyosoye',
             author_link: 'https://github.com/GabrielFemi',
             code_license: 'MIT',
-            code_license_link: 'http://opensource.org/licenses/mit-license.php'
+            code_license_link: 'http://opensource.org/licenses/mit-license.php',
+            count: 0
         },
         methods: {
+            increaseCounter: function () {
+                if (this.count >= 10 ) {
+                    alert("10 is the limit")
+                    return
+                }
 
+                return this.count++
+            }
         }
     })
 </script>
