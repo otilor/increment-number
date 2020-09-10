@@ -15,6 +15,7 @@
             {{  count  }}
             <br>
             <button v-on:click="increaseCounter()" class="btn btn-lg btn-success">Increase</button>
+            <button v-on:click="decreaseCounter()" class="btn btn-lg btn-danger">Decrease</button>
         </div>
 
 
@@ -52,6 +53,11 @@
         methods: {
             increaseCounter: function () {
                 return this.count++
+            },
+            decreaseCounter: function () {
+                if (this.count > 0){
+                    return this.count--
+                }
             }
         }
     })
