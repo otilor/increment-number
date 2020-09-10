@@ -11,12 +11,14 @@
 <body>
 
     <div id="app">
-        <div class="center text-50px text-center text-bangers">
+        <div class="center text-50px text-center text-bangers" :class = "count <= 0 ? 'text-danger' : ''">
             {{  count  }}
             <br>
             <button v-on:click="increaseCounter()" class="btn btn-lg btn-success">Increase</button>
             <button v-on:click="decreaseCounter()" class="btn btn-lg btn-danger">Decrease</button>
+            <p class="text-10px">{{ error }}</p>
         </div>
+
 
 
     <section>
@@ -48,16 +50,23 @@
             author_link: 'https://github.com/GabrielFemi',
             code_license: 'MIT',
             code_license_link: 'http://opensource.org/licenses/mit-license.php',
-            count: 0
+            count: 0,
+            error: '',
         },
         methods: {
             increaseCounter: function () {
+                this.resetErrorMessage()
                 return this.count++
             },
             decreaseCounter: function () {
                 if (this.count > 0){
                     return this.count--
                 }
+
+                this.error = 'Sorry, you can\'t go less than zero!'
+            },
+            resetErrorMessage: function () {
+                this.error = ''
             }
         }
     })
